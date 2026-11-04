@@ -1,4 +1,5 @@
 import DashboardContent from "@/features/dashboard/components/DashboardContent";
+import RecentlyViewed from "@/features/dashboard/components/RecentlyViewed";
 import { Suspense } from "react";
 
     
@@ -14,6 +15,11 @@ export default async function Dashboard() {
             <Suspense fallback={<p>Loading...</p>}>
                 <DashboardContent />
             </Suspense>
+            <div>
+                <Suspense fallback={<p>Loading...</p>}>
+                    <RecentlyViewed />
+                </Suspense>
+            </div>
       </section>
     </div>
   );

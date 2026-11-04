@@ -24,6 +24,10 @@ export default function Navbar() {
               <Link href="/contact" className="hover:text-blue-600">
                 Contact
               </Link>
+
+              <Link href="/auth/signup" className="hover:text-blue-600">
+                Signup
+              </Link>
               </nav>
             </header>
     )

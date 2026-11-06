@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getDashboardServices } from "@/services/dashboardservice";
+import RateButton from "@/components/ui/rate-btn";
 
 export default async function DashboardContent() {
   const servicesCleaning = await getDashboardServices();
@@ -14,6 +15,7 @@ export default async function DashboardContent() {
           <Link href={`/servicepost/${service.id}`}>
             {service.title}
           </Link>
+          <RateButton votes={service.rating} voteId={service.id}/>
         </li>
       ))}
     </ul>
@@ -26,6 +28,7 @@ export default async function DashboardContent() {
           <Link href={`/servicepost/${service.id}`}>
             {service.title}
           </Link>
+          <RateButton votes={service.rating} voteId={service.id}/>
         </li>
       ))}
     </ul>

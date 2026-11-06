@@ -1,3 +1,5 @@
+import { Signup } from "@/services/actions/authActions";
+
 export default function SignupPage() {
   return (
 <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
@@ -12,7 +14,7 @@ export default function SignupPage() {
       </p>
     </div>
 
-    <form action="/api/auth/signup" method="POST" className="space-y-5">
+    <form action={Signup} className="space-y-5">
 
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

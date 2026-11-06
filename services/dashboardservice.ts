@@ -1,16 +1,19 @@
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
-import { cacheLife } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 
 export interface Service {
   id: number;
   title: string;
-  description: string
+  description: string,
+  "rating": number
 }
 
 export async function getDashboardServices(): Promise<Service[]> {
     "use cache";
     cacheLife("days");
+    cacheTag("Services");
+    //updateTage("Services")
 
   const response = await fetch(
     "https://dummyjson.com/products"
